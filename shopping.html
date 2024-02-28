@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adi Electronics Online Shopping</title>
+    <link rel="stylesheet" href="shopping.css" />
+  </head>
+  <body onload="disableSubmit()">
+    <h1>Welcome to Adi- Online Shopping</h1>
+    <form action="#" onsubmit=" return calculateFinalAmount(event)">
+      <table id="Ebill">
+        <tr>
+          <td><label for="custname">Customer Name</label></td>
+          <td>
+            <input
+              type="text"
+              id="custname"
+              name="custname"
+              pattern="[a-zA-Z\s]+"
+              placeholder="Enter Customer Name"
+              title="Customer Name should contain only alphabets and can have spaces"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="mobileNumber">Mobile Number</label></td>
+          <td>
+            <input
+              type="tel"
+              id="mobileNumber"
+              name="mobileNumber"
+              placeholder="Enter Your mobile no"
+              pattern="[7-9]{1}[0-9]{9}"
+              title="It should be 10 digits and should start with 7/8/9"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="email">Email ID</label></td>
+          <td>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your Email"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="address">Billing Address</label></td>
+          <td>
+            <textarea
+              rows="5"
+              cols="20"
+              placeholder="Enter Your Address"
+              required
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="product">Choose Product</label></td>
+          <td>
+            <select id="product" name="product" required>
+              <option value="" disabled selected>Select a Product</option>
+              <option value="1" id="TV">TV</option>
+              <option value="2" id="Fridge">Fridge</option>
+              <option value="3" id="Mobile">Mobile</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="quantity">Enter Quantity</label></td>
+          <td>
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              min="1"
+              placeholder="Enter Quantity"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="mode">Payment Mode</label></td>
+          <td>
+            <select name="mode" id="mode" required>
+              <option value="" disabled selected>Select a Payment Mode</option>
+              <option value="1" id="Cash">Cash On Delivery</option>
+              <option value="2" id="Debit">Debit Card</option>
+              <option value="3" id="UPI">UPI Transfer</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="bill">Bag Total</label></td>
+          <td>
+            <input
+              type="number"
+              id="bill"
+              name="bill"
+              onfocus="calculateBagTotal()"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="coupon">Coupon Code</label></td>
+          <td>
+            <input
+              type="text"
+              id="coupon"
+              name="coupon"
+              pattern="ADI[0-9]{4}"
+              title="Enter Coupon Code"
+              onfocus="calculateCoupon()"
+              readonly
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label>Delivery Option</label></td>
+          <td>
+            <input
+              type="radio"
+              id="express"
+              name="delivery"
+              value="Express"
+              required
+            />
+            <label for="express">Express</label>
+            <input
+              type="radio"
+              id="standard"
+              name="delivery"
+              value="Standard"
+            />
+            <label for="standard">Standard</label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input
+              type="checkbox"
+              id="terms"
+              name="terms"
+              onchange="activateButton(this)"
+            />To Agree to Adi Electronics Terms and Conditions.
+          </td>
+        </tr>
+        <tr>
+          <td><button type="reset" id="reset" name="reset">Clear</button></td>
+          <td>
+            <button type="submit" id="submit" name="submit" onclick="">
+              Check Payable Amount
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"><div id="result"></div></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+  <script src="shopping.js">
+    
+  </script>
+</html>

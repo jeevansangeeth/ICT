@@ -1,0 +1,33 @@
+h1 {
+  text-align: center;
+  color: #ffffff;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #ffa07a;
+}
+body {
+  color: #fffacd;
+}
+#Ebill {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 400px;
+  background-color: #5f96a0;
+  color: white;
+  text-align: center;
+  border-collapse: collapse;
+}
+table {
+  margin: auto;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+#Ebill th,
+#Ebill td {
+  border: 2px solid #ddd;
+  padding: 8px;
+}
+
+#result {
+  color: #770080;
+  font-weight: bold;
+}
